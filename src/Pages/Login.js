@@ -9,10 +9,24 @@ export default function Login() {
   const [error, setError] = useState("");
 
   const handleClickEvent = () => {
-    let result =
-      username === "masuma" && password === "admin"
-        ? navigate("/")
-        : setError("Either Username/Password is invalid!!!");
+    let result = auth()
+      ? navigate("/")
+      : setError("Either Username/Password is invalid!!!");
+  };
+
+  const auth = () => {
+    let isLoggedIn = false;
+    let user = localStorage.getItem("user");
+    user = JSON.parse(user);
+    for (let i of user) {
+      isLoggedIn =
+        i.userName === username && i.password === password ? true : false;
+      if (isLoggedIn) {
+        break;
+      }
+    }
+
+    return isLoggedIn;
   };
 
   return (

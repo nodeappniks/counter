@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Login from "./Pages/Login";
+import Registration from "./Pages/Registration";
 import "bootstrap/dist/css/bootstrap.min.css";
 //css
 const styles = createUseStyles({
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/about" element={<About />}></Route>
         <Route exact path="/login" element={<Login />}></Route>
+        <Route exact path="/registration" element={<Registration />}></Route>
         {/* <Route exact path="/" element={<Counter styleCss={css} />}></Route> */}
       </Routes>
     </Router>
