@@ -22,6 +22,7 @@ export default function Login() {
       isLoggedIn =
         i.userName === username && i.password === password ? true : false;
       if (isLoggedIn) {
+        localStorage.setItem("userData", JSON.stringify(i));
         break;
       }
     }
