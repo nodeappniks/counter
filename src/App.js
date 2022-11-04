@@ -48,13 +48,13 @@ function App() {
         <Route
           exact
           path="/login"
-          element={isLoggedInUser ? <Navigate to="/" replace /> : <Login />}
+          element={isLoggedInUser ? <Navigate to="/" /> : <Login />}
         ></Route>
         <Route
           exact
           path="/registration"
           element={
-            isLoggedInUser ? <Navigate to="/" replace /> : <Registration />
+            isLoggedInUser ? <Navigate to="/" /> : <Registration />
           }
         ></Route>
         {/* <Route exact path="/" element={<Counter styleCss={css} />}></Route> */}
